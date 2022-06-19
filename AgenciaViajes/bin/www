@@ -8,6 +8,11 @@ var app = require('../app');
 var debug = require('debug')('agenciaviajes:server');
 var http = require('http');
 
+
+// Config DB
+require('../config/db')
+
+
 /**
  * Get port from environment and store in Express.
  */

@@ -1,0 +1,15 @@
+POST http://localhost:3000/api/users/datos
+Content-Type: application/json
+
+{
+
+    "nombre": "Marta",
+    "apellidos": "Sánchez",
+    "direccion": "Paseo Extremadura 144",
+    "telefono": "656402833",
+    "fnacimiento": "29-12-1980",
+    "email": "marta@gmail.com",
+    "dni": "49002940Z",
+    "viajes": ""
+
+}
