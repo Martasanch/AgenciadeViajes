@@ -1,15 +1,116 @@
-POST http://localhost:3000/api/users/datos
+
+
+#######################
+## PRUEBAS api/users ##
+#######################
+
+### Crear cliente
+
+POST http://localhost:3000/api/users/crear
 Content-Type: application/json
 
 {
 
-    "nombre": "Marta",
-    "apellidos": "Sánchez",
-    "direccion": "Paseo Extremadura 144",
-    "telefono": "656402833",
-    "fnacimiento": "29-12-1980",
-    "email": "marta@gmail.com",
-    "dni": "49002940Z",
+    "nombre": "Laura",
+    "apellidos": "González",
+    "direccion": "padre Mariana, 1",
+    "telefono": "655550000",
+    "fnacimiento": "10-01-88",
+    "email": "laura@gmail.com",
+    "dni": "67823445Z",
     "viajes": ""
 
 }
+
+
+### Recuperar clientes
+
+###
+GET http://localhost:3000/api/users
+
+### Actualizar cliente
+
+###
+PUT http://localhost:3000/api/users/62b0a2763353f4f91a3da458
+Content-Type: application/json
+
+{
+    "email": "pepe@gmail.com"
+}
+
+### Borrar cliente
+
+DELETE http://localhost:3000/api/users/62b0a2763353f4f91a3da458
+
+
+#########################
+## PRUEBAS api/hotels ###
+#########################
+
+POST http://localhost:3000/api/hotels/crear
+Content-Type: application/json
+
+{
+
+    "nombre": "Room Mate LariosSe abre en una ventana nueva",
+    "direccion": "Room Mate LariosSe abre en una ventana nueva",
+    "ciudad": "Málaga",
+    "estrellas": 4,
+    "descripcion": "Este alojamiento está a 13 minutos a pie de la playa. Este hotel boutique con un diseño Art Déco ofrece habitaciones con WiFi gratuita y TV LCD. El Room Mate Larios está a solo unos minutos del Museo Picasso de Málaga.",
+    "tarifa": 102,
+    "imagen": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/310515996.jpg?k=8a7674a6a0b8a0ad49dd779a28d0f37abf32ab3b581075783af7bb7d6c44b9b6&o=&hp=1"
+
+}
+### Recuperar hoteles
+
+###
+GET http://localhost:3000/api/hotels
+
+### Actualizar hotel
+
+###
+PUT http://localhost:3000/api/hotels/62b0a9e14e21b00bbdca1b67
+Content-Type: application/json
+
+{
+    "ciudad": "Menorca"
+}
+
+### Borrar hotel
+
+DELETE http://localhost:3000/api/hotels/62b0ab7e5470b078497336cf
+
+#########################
+## PRUEBAS api/viajes ###
+#########################
+
+### Crear un viaje
+
+POST http://localhost:3000/api/viajes/crear
+Content-Type: application/json
+
+{   
+    "fechaSalida": "2022-08-15",
+    "fechaVuelta": "2022-08-25",
+    "IDvueloIda": "43242edf",
+    "IDvueloIda": "56242y5r",
+    "hotel":""
+}
+### Recuperar viajes
+
+###
+GET http://localhost:3000/api/viajes
+
+### Actualizar hotel
+
+###
+PUT http://localhost:3000/api/viajes/62b0ae7ff4cb6827a44d5cc2
+Content-Type: application/json
+
+{
+    "hotel": "Senator"
+}
+
+### Borrar hotel
+
+DELETE http://localhost:3000/api/viajes/62b0aea8f4cb6827a44d5cc7

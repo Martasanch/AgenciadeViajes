@@ -9,7 +9,7 @@ const userSchema = new Schema({
     fnacimiento: String,
     email: String,
     dni: String,
-    viajes: String
+/*     viajes: [{ type: Schema.Types.ObjectId, ref: 'viaje' }] */
 })
 
 module.exports = mongoose.model('user', userSchema)

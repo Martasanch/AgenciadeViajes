@@ -7,7 +7,8 @@ const hotelSchema = new Schema({
     ciudad: String,
     estrellas: Number,
     descripcion: String,
-    tarifa: Number
+    tarifa: Number,
+    imagen: String
 
 })
 
