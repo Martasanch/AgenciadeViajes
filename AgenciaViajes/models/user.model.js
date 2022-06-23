@@ -8,7 +8,7 @@ const userSchema = new Schema({
     telefono: Number,
     fnacimiento: String,
     email: String,
-    dni: String,
+    dni: String
 /*     viajes: [{ type: Schema.Types.ObjectId, ref: 'viaje' }] */
 })
 

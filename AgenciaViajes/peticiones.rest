@@ -15,14 +15,21 @@ Content-Type: application/json
     "apellidos": "González",
     "direccion": "padre Mariana, 1",
     "telefono": "655550000",
-    "fnacimiento": "10-01-88",
+    "fnacimiento": "1988-01-10",
     "email": "laura@gmail.com",
-    "dni": "67823445Z",
-    "viajes": ""
+    "dni": "67823445Z"
 
 }
 
+//Relacionar
+POST http://localhost:3000/api/users/viajes
+Content-Type: application/json
 
+{
+"user_id": "62b4a13db29c1b50358e4c70",
+"viaje_id": ""
+
+}
 ### Recuperar clientes
 
 ###
@@ -94,7 +101,7 @@ Content-Type: application/json
     "fechaVuelta": "2022-08-25",
     "IDvueloIda": "43242edf",
     "IDvueloIda": "56242y5r",
-    "hotel":""
+    "hotels":""
 }
 ### Recuperar viajes
 

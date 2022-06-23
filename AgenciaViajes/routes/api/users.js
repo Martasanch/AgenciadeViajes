@@ -11,7 +11,6 @@ router.post('/crear', async (req, res) => {
 
     try {
         const newUser = await User.create(req.body)
-/*         newUser.viajes.push(¿¿¿¿) */
         res.json(newUser)
      
     
@@ -21,7 +20,23 @@ router.post('/crear', async (req, res) => {
    
 })
 
-//Recuperar lista de clientes
+/* //Enlazar los viajes a un usuario
+// POST http://localhost:3000/api/users/viajes
+
+const { user_id, viaje_id} =req.body
+const user = await User.findById(user_id)
+user.viajes.push(viaje_id)
+//....
+
+//Recuperar lista de clientes con los datos de viajes
+// GET http://localhost:3000/api/users-viajes
+User.find()
+.populate('viajes')
+.exec()
+.then()
+.catch() */
+
+//....
 
 // GET http://localhost:3000/api/users
 router.get('/', async(req, res) =>{

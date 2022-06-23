@@ -6,8 +6,8 @@ const viajeSchema = new Schema({
     fechaSalida: Date,
     fechaVuelta: Date,
     IDvueloIda: String,
-    IDvueloVuelta: String,
-/*     hotel:[{ type: Schema.Types.ObjectId, ref: 'hotel' }] */
+    IDvueloVuelta: String
+/*     user:[{ type: Schema.Types.ObjectId, ref: 'user' }] */
 })
 
 module.exports = mongoose.model('viaje', viajeSchema)
