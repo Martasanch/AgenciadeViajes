@@ -1,21 +1,27 @@
 
 import './App.css';
-import {BrowserRoute, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Lista from './pages/viajes/Lista';
+import Home from './pages/viajes/Home';
+import Formulario from './pages/viajes/Formulario';
+
 
 function App() {
   return (
     <div className="App">
-<BrowserRoute>
+
+
+<BrowserRouter>
 <Routes>
-  <Route path='/viajes'>
-<Route path='/' element={<Lista/>}/>
-<Route path='/' element={<Formulario/>}/>
+  <Route path='/' element={<Home />}>
+  <Route path='/viajes' element={<Lista/>}/>
+<Route path='/new' element={<Formulario/>}/>
 
   </Route>
 </Routes>
 
 
-</BrowserRoute>
+</BrowserRouter>
     </div>
   );
 }

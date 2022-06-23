@@ -21,6 +21,8 @@ Content-Type: application/json
 
 }
 
+###
+
 //Relacionar
 POST http://localhost:3000/api/users/viajes
 Content-Type: application/json
@@ -108,7 +110,7 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/viajes
 
-### Actualizar hotel
+### Actualizar viaje
 
 ###
 PUT http://localhost:3000/api/viajes/62b0ae7ff4cb6827a44d5cc2
@@ -118,6 +120,6 @@ Content-Type: application/json
     "hotel": "Senator"
 }
 
-### Borrar hotel
+### Borrar viaje
 
 DELETE http://localhost:3000/api/viajes/62b0aea8f4cb6827a44d5cc7
