@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import classes from "./ListaUsers.module.css"
+import DayJS from 'react-dayjs';
 
 const ListaUsers = ( )=>{
 
@@ -36,9 +37,9 @@ const ListaUsers = ( )=>{
                         <h5>Nombre: {user.nombre}</h5>
                         <h5>Apellidos: {user.apellidos}</h5>
                         <h5>Dirección: {user.direccion}</h5>
-                        <h5>Fecha de Nacimiento: {user.fnacimiento}</h5>
-                        <h5>email:{user.email}</h5>
-                        <h5>dni: {user.dni}</h5>
+                        <h5>Fecha de Nacimiento: <DayJS format="DD-MM-YYYY">{user.fnacimiento}</DayJS></h5>
+                        <h5>email: {user.email}</h5>
+                        <h5>DNI: {user.dni}</h5>
                         <button className="btn btn-danger" onClick ={()=>borraUser(user._id)}>Borrar</button>
 
                     </div>

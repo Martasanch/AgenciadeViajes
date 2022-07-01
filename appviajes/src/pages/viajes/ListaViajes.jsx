@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import classes from "./ListaViajes.module.css"
+import DayJS from 'react-dayjs';
 
 const ListaViajes = ( )=>{
 
@@ -31,8 +32,8 @@ const ListaViajes = ( )=>{
             <div className={classes.viajes}>
                 {viajes.map(viaje=>(
                     <div className={classes.viaje} key={viaje._id}>
-                        <h5>Fecha de salida: {viaje.fechaSalida}</h5>
-                        <h5>Fecha de regreso: {viaje.fechaVuelta}</h5>
+                        <h5>Fecha de salida: <DayJS format="DD-MM-YYYY">{viaje.fechaSalida}</DayJS></h5>
+                        <h5>Fecha de regreso: <DayJS format="DD-MM-YYYY">{viaje.fechaVuelta}</DayJS></h5>
                         <h5>Localizador vuelo ida: {viaje.IDvueloIda}</h5>
                         <h5>Localizador vuelo vuelta: {viaje.IDvueloVuelta}</h5>
                         <h5>Usuario: {viaje.user._id}</h5>
