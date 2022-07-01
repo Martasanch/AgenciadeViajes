@@ -12,26 +12,29 @@ Content-Type: application/json
 {
 
     "nombre": "Laura",
-    "apellidos": "González",
-    "direccion": "padre Mariana, 1",
-    "telefono": "655550000",
-    "fnacimiento": "1988-01-10",
+    "apellidos": "Martínez",
+    "direccion": "Padre Mariana, 34",
+    "telefono": "630298689",
+    "fnacimiento": "1985-01-31",
     "email": "laura@gmail.com",
-    "dni": "67823445Z"
+    "dni": "90073445Z"
 
 }
 
 ###
 
-//Relacionar
-POST http://localhost:3000/api/users/viajes
+
+POST http://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-"user_id": "62b4a13db29c1b50358e4c70",
-"viaje_id": ""
+
+"viaje_id":"62b707477f2192220ae95b7d",
+"user_id": "62b70438483835a5ac5954ad"
 
 }
+
+###
 ### Recuperar clientes
 
 ###
@@ -40,7 +43,7 @@ GET http://localhost:3000/api/users
 ### Actualizar cliente
 
 ###
-PUT http://localhost:3000/api/users/62b0a2763353f4f91a3da458
+PUT http://localhost:3000/api/users/62b6ffb9483835a5ac595486
 Content-Type: application/json
 
 {
@@ -49,7 +52,7 @@ Content-Type: application/json
 
 ### Borrar cliente
 
-DELETE http://localhost:3000/api/users/62b0a2763353f4f91a3da458
+DELETE http://localhost:3000/api/users/62b6ffb9483835a5ac595486
 
 
 #########################
@@ -61,13 +64,13 @@ Content-Type: application/json
 
 {
 
-    "nombre": "Room Mate LariosSe abre en una ventana nueva",
-    "direccion": "Room Mate LariosSe abre en una ventana nueva",
-    "ciudad": "Málaga",
-    "estrellas": 4,
-    "descripcion": "Este alojamiento está a 13 minutos a pie de la playa. Este hotel boutique con un diseño Art Déco ofrece habitaciones con WiFi gratuita y TV LCD. El Room Mate Larios está a solo unos minutos del Museo Picasso de Málaga.",
-    "tarifa": 102,
-    "imagen": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/310515996.jpg?k=8a7674a6a0b8a0ad49dd779a28d0f37abf32ab3b581075783af7bb7d6c44b9b6&o=&hp=1"
+    "nombre": "La Casona de MestasSe abre en una ventana nueva",
+    "direccion": "Alqueria de Ferrando, s/n, 03749 Denia, España",
+    "ciudad": "Asturias",
+    "estrellas": 3,
+    "descripcion": "La Casona de Mestas, situada en el parque natural de Ponga, dispone de una piscina termal natural ubicada dentro de una cueva. Esta encantadora casa de campo asturiana conduce a unos bellos jardines y dispone de una terraza con magníficas vistas a las montañas y al río Pong",
+    "tarifa": 78,
+    "imagen": "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/13781486.jpg?k=7adb7afb612b91528ce4b4a59c458fa52c6bb15bb945208656897a2586f13031&o=&hp=1"
 
 }
 ### Recuperar hoteles
@@ -87,7 +90,7 @@ Content-Type: application/json
 
 ### Borrar hotel
 
-DELETE http://localhost:3000/api/hotels/62b0ab7e5470b078497336cf
+DELETE http://localhost:3000/api/hotels/62b4a6147e235b46d3d83ec7
 
 #########################
 ## PRUEBAS api/viajes ###
@@ -99,11 +102,13 @@ POST http://localhost:3000/api/viajes/crear
 Content-Type: application/json
 
 {   
-    "fechaSalida": "2022-08-15",
+    "fechaSalida": "2022-09-12",
     "fechaVuelta": "2022-08-25",
-    "IDvueloIda": "43242edf",
-    "IDvueloIda": "56242y5r",
-    "hotels":""
+    "IDvueloIda": "86442edf",
+    "IDvueloVualta": "91942y5r",
+    "hotel": "62b0aa674e21b00bbdca1b69"
+
+
 }
 ### Recuperar viajes
 
@@ -122,4 +127,4 @@ Content-Type: application/json
 
 ### Borrar viaje
 
-DELETE http://localhost:3000/api/viajes/62b0aea8f4cb6827a44d5cc7
+DELETE http://localhost:3000/api/viajes/62b0b4c7c35cf14d1dde5cbd

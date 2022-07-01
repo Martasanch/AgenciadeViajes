@@ -5,9 +5,17 @@ const Viaje = require('../../models/viaje.model')
 
 //Listar Viajes
 // GET http://localhost:3000/api/viajes
-router.get('/', async (req, res) => {
-    const viajes= await Viaje.find()
-     res.json(viajes)
+router.get('/', (req, res) => {
+    Viaje.find()
+    .populate('user').populate('hotel')
+    .exec()
+    .then(viajes =>{
+        res.json(viajes)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err.message });
+    });
+     
  
  })
  

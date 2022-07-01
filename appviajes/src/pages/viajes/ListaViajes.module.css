@@ -1,0 +1,17 @@
+.viajes {
+    display:flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+}  
+
+    
+    .viaje {
+        border-radius: 10px;
+        width: 300px;
+        border: 1px solid black;
+        padding: 20px;
+        background-color: rgb(216, 240, 232);
+    }

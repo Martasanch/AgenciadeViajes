@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import classes from "./Lista.module.css"
+import classes from "./ListaViajes.module.css"
 
-const Lista = ( )=>{
+const ListaViajes = ( )=>{
 
         const [viajes, setViajes] = useState([])
         useEffect(()=>{
@@ -10,21 +10,19 @@ const Lista = ( )=>{
             .then(json => setViajes(json))
         }, [])
 
-const borraViaje = async (idViaje) =>{
 
-    //DELETE
+   //DELETE
+    const borraViaje = async (idViaje) =>{
+
     await fetch(`http://localhost:3000/api/viajes/${idViaje}`, {
         method: 'DELETE'
     })
 
-
     //get /API/VIAJES
-
     const response = await fetch('http://localhost:3000/api/viajes')
     const json =await response.json()
     setViajes(json)
-
-}
+    }
 
 
     return <div>
@@ -32,13 +30,14 @@ const borraViaje = async (idViaje) =>{
             <h2>Lista de Viajes</h2>
             <div className={classes.viajes}>
                 {viajes.map(viaje=>(
-                    <div className="viaje" key={viaje._id}>
-                        <h4>{viaje.fechaSalida}</h4>
-                        <h4>{viaje.fechaVuelta}</h4>
-                        <h4>{viaje.IDvueloIda}</h4>
-                        <h4>{viaje.IDvueloVuelta}</h4>
-                        
-                        <button onClick ={()=>borraViaje(viaje._id)}>Borrar</button>
+                    <div className={classes.viaje} key={viaje._id}>
+                        <h5>Fecha de salida: {viaje.fechaSalida}</h5>
+                        <h5>Fecha de regreso: {viaje.fechaVuelta}</h5>
+                        <h5>Localizador vuelo ida: {viaje.IDvueloIda}</h5>
+                        <h5>Localizador vuelo vuelta: {viaje.IDvueloVuelta}</h5>
+                        <h5>Usuario: {viaje.user._id}</h5>
+
+                        <button className="btn btn-danger" onClick ={()=>borraViaje(viaje._id)}>Borrar</button>
 
                     </div>
                 ))}
@@ -47,4 +46,4 @@ const borraViaje = async (idViaje) =>{
  
 }
 
-export default Lista
+export default ListaViajes

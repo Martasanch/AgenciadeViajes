@@ -8,7 +8,8 @@ const hotelSchema = new Schema({
     estrellas: Number,
     descripcion: String,
     tarifa: Number,
-    imagen: String
+    imagen: String,
+    viaje: {type: Schema.Types.ObjectId, ref: 'viaje'}
 
 })
 

@@ -20,37 +20,30 @@ router.post('/crear', async (req, res) => {
    
 })
 
-/* //Enlazar los viajes a un usuario
-// POST http://localhost:3000/api/users/viajes
+//Enlazar los viajes a un usuario
+// POST http://localhost:3000/api/users/add
 
-const { user_id, viaje_id} =req.body
-const user = await User.findById(user_id)
-user.viajes.push(viaje_id)
-//....
 
-//Recuperar lista de clientes con los datos de viajes
-// GET http://localhost:3000/api/users-viajes
-User.find()
-.populate('viajes')
-.exec()
-.then()
-.catch() */
+router.post('/add', async (req, res) => {
+    const { viaje_id, user_id } = req.body;
+    const user = await User.findById(user_id);
+    user.viajes.push(viaje_id);
+    await user.save();
+    res.json(user);
+})
 
-//....
+
 
 // GET http://localhost:3000/api/users
-router.get('/', async(req, res) =>{
-    
-    try {
-        const recUser = await User.find()
-        res.json(recUser)
-    
-    } catch (err) {
-        res.status(500).json({ error:err.message})
-    }
+router.get('/', (req, res) =>{
     
 
-
+User.find()
+        .populate('viajes')
+        .exec()
+        .then(users => res.json(users))
+        .catch(error => res.json({ error: error.message }));
+    
 });
 
 //Actualizar datos de un cliente por su id

@@ -1,0 +1,10 @@
+.botones {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.bg{
+    background-color: rgb(230, 233, 232);
+}
+
